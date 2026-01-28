@@ -1,7 +1,7 @@
 -- Local SQLite Schema
 -- Designed for Offline-First Sync
 
--- 1. Room Types (Standard, Deluxe, Suite)
+-- 1. Room Types (Deluxe,super deluxe,luxury)
 CREATE TABLE IF NOT EXISTS room_types (
     id TEXT PRIMARY KEY, -- UUID
     name TEXT NOT NULL,
