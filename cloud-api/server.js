@@ -90,6 +90,19 @@ app.post('/api/sync/push', async (req, res) => {
             }
         }
 
+        // --- NEW: Sync Room Types ---
+        if (changes.room_types) {
+            for (const rt of changes.room_types) {
+                await query(
+                    `INSERT INTO room_types (id, name, base_price, gst_percent, version)
+                     VALUES ($1, $2, $3, $4, $5)
+                     ON CONFLICT (id) DO UPDATE SET
+                     name = EXCLUDED.name, base_price = EXCLUDED.base_price, gst_percent = EXCLUDED.gst_percent, version = EXCLUDED.version, updated_at = NOW()`,
+                    [rt.id, rt.name, rt.base_price, rt.gst_percent, rt.version]
+                );
+            }
+        }
+
         // --- NEW: Sync Rooms ---
         if (changes.rooms) {
             for (const r of changes.rooms) {
