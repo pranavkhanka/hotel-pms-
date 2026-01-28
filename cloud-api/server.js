@@ -90,6 +90,19 @@ app.post('/api/sync/push', async (req, res) => {
             }
         }
 
+        // --- NEW: Sync Rooms ---
+        if (changes.rooms) {
+            for (const r of changes.rooms) {
+                await query(
+                    `INSERT INTO rooms (id, room_number, room_type_id, status, version)
+                     VALUES ($1, $2, $3, $4, $5)
+                     ON CONFLICT (id) DO UPDATE SET
+                     status = EXCLUDED.status, version = EXCLUDED.version, updated_at = NOW()`,
+                    [r.id, r.room_number, r.room_type_id, r.status, r.version]
+                );
+            }
+        }
+
         await query('COMMIT');
         res.json({ status: 'ok', synced_at: new Date() });
     } catch (err) {
@@ -121,7 +134,7 @@ app.get('/api/sync/pull', async (req, res) => {
 });
 
 
-// --- Owner Dashboard API ---
+// --- Owner Dashboard & Verification API ---
 app.get('/api/dashboard', async (req, res) => {
     // Aggregation queries
     try {
@@ -134,6 +147,17 @@ app.get('/api/dashboard', async (req, res) => {
         });
     } catch (err) {
         res.status(500).json({ error: 'Dashboard error' });
+    }
+});
+
+app.get('/api/rooms/:room_number', async (req, res) => {
+    try {
+        const { room_number } = req.params;
+        const result = await query('SELECT * FROM rooms WHERE room_number = $1', [room_number]);
+        if (result.rows.length === 0) return res.status(404).json({ error: 'Room not found' });
+        res.json(result.rows[0]);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 });
 

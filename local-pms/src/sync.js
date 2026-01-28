@@ -1,8 +1,7 @@
 const { all, run, get } = require('./db');
-// Node 18+ has fetch. If using older node, might need node-fetch, but standard usually fine now.
-// If issues arise, we can add node-fetch.
+const { CLOUD_API_URL } = require('./config');
 
-const API_URL = process.env.CLOUD_API_URL || 'http://localhost:4000/api';
+const API_URL = CLOUD_API_URL;
 let isSyncing = false;
 
 const syncWorker = async () => {
