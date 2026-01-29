@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--
+    Hotel Nature Valley - Static Website
+    Tech Stack: Pure HTML/CSS/JavaScript (Vanilla)
+    
+    Why Vanilla Stack?
+    - Zero build dependencies — works on any static host
+    - Easy maintenance — non-technical staff can edit HTML directly
+    - Fast loading — no framework overhead
+    - Future-proof — no deprecation concerns
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Hotel Nature Valley - A tranquil retreat in Dalhousie, Himachal Pradesh. Experience the serenity of Himalayan valleys with premium hospitality. Perfectly Pleasant.">
+  <meta name="keywords"
+    content="Hotel Nature Valley, Dalhousie hotel, Dharamshala hotel, Himachal Pradesh resort, mountain hotel, nature resort, Khajjiar hotel">
+  <meta name="author" content="Hotel Nature Valley">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Hotel Nature Valley - Perfectly Pleasant">
+  <meta property="og:description"
+    content="A tranquil retreat nestled in the Himalayas. Experience nature immersion and premium hospitality in Dalhousie.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://naturevalley.in">
+  <meta property="og:image" content="images/icons/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/icons/deer.png">
+  <link rel="apple-touch-icon" href="images/icons/deer.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <title>Hotel Nature Valley | Perfectly Pleasant | Dalhousie, Himachal Pradesh</title>
+</head>
+
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ============================================
+       HEADER / NAVIGATION
+       ============================================ -->
+  <header class="header" id="header">
+    <div class="container header__container">
+      <a href="#" class="logo" aria-label="Hotel Nature Valley - Home">
+        <img src="images/icons/logo.png" alt="Hotel Nature Valley Logo" class="logo__image">
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list" id="nav-list">
+          <li><a href="#home" class="nav__link nav__link--active">Home</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#rooms" class="nav__link">Rooms</a></li>
+          <li><a href="#attractions" class="nav__link">Attractions</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+        <a href="https://booking.trustifyedge.com/home?Token=book_a697fe49e-d0cd-40e9-ae17-51357b40597fe49"
+          class="btn btn--primary nav__cta" target="_blank" rel="noopener">
+          Book Now
+        </a>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav__overlay" id="nav-overlay"></div>
+
+  <main id="main-content">
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" id="home">
+      <video class="hero__video" autoplay muted loop playsinline poster="images/rooms/deluxe-room.jpg">
+        <source src="images/hero/naturevalley.mp4" type="video/mp4">
+      </video>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <span class="hero__tagline">Perfectly Pleasant</span>
+        <h1 class="hero__title">Hotel Nature Valley</h1>
+        <p class="hero__subtitle">
+          A tranquil retreat nestled in the Himalayas. Where nature's serenity meets warm hospitality in the heart of
+          Dalhousie.
+        </p>
+        <div class="hero__cta">
+          <a href="https://booking.trustifyedge.com/home?Token=book_a697fe49e-d0cd-40e9-ae17-51357b40597fe49"
+            class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+            Book Your Stay
+          </a>
+          <a href="#rooms" class="btn btn--secondary btn--lg">
+            Explore Rooms
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__scroll">
+        <span>Scroll Down</span>
+        <div class="hero__scroll-icon"></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================ -->
+    <section class="about section section--lg" id="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__image-wrapper fade-in-left">
+            <img src="images/gallery/exterior-mountain-view.jpg" alt="Hotel Nature Valley Exterior - Mountain View"
+              class="about__image" loading="lazy">
+            <div class="about__image-accent"></div>
+            <img src="images/icons/deer.png" alt="" class="about__deer" aria-hidden="true">
+          </div>
+
+          <div class="about__content fade-in-right">
+            <span class="section-label">Welcome to Nature Valley</span>
+            <h2 class="section-title">A Himalayan Sanctuary of Peace & Comfort</h2>
+            <p class="about__text">
+              Hotel Nature Valley was formed by like-minded entrepreneurs with a passion for travel and exploration. Our
+              fundamental values are service, design, and simplicity — when you reserve a room with us, you're
+              guaranteed to have an outstanding experience.
+            </p>
+            <p class="about__text">
+              Nestled in a forested area near Dalhousie, our tranquil retreat provides a serene setting for a
+              rejuvenating getaway. Being surrounded by snow-capped mountains mesmerises the senses and rejuvenates
+              weary spirits. Located at the western extremity of the Dhauladhar mountain range, we're well-known for our
+              moderate climate and natural beauty.
+            </p>
+
+            <div class="about__features">
+              <div class="about__feature">
+                <div class="about__feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="about__feature-title">Prime Location</h4>
+                  <p class="about__feature-text">500m from Banikhet bus stand, 28.6km from Khajjiar</p>
+                </div>
+              </div>
+              <div class="about__feature">
+                <div class="about__feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 3v3a2 2 0 0 1-2 2H3" />
+                    <path d="M21 8h-3a2 2 0 0 1-2-2V3" />
+                    <path d="M3 16h3a2 2 0 0 1 2 2v3" />
+                    <path d="M16 21v-3a2 2 0 0 1 2-2h3" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="about__feature-title">Modern Amenities</h4>
+                  <p class="about__feature-text">Pool, gym, restaurant, conference hall</p>
+                </div>
+              </div>
+              <div class="about__feature">
+                <div class="about__feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="about__feature-title">Nature Immersion</h4>
+                  <p class="about__feature-text">Surrounded by pine forests and mountains</p>
+                </div>
+              </div>
+              <div class="about__feature">
+                <div class="about__feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="about__feature-title">Warm Hospitality</h4>
+                  <p class="about__feature-text">Professional staff, personalized service</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ROOMS SECTION
+         ============================================ -->
+    <section class="rooms section section--lg" id="rooms">
+      <div class="container">
+        <div class="rooms__header fade-in">
+          <span class="section-label">Accommodations</span>
+          <h2 class="section-title">Rooms & Suites</h2>
+          <p class="section-subtitle mx-auto">
+            Every room is designed with your comfort in mind — spacious, well-appointed, and offering stunning views of
+            the surrounding mountains.
+          </p>
+        </div>
+
+        <div class="grid grid-3 stagger">
+          <!-- Room Card 1 -->
+          <article class="room-card fade-in">
+            <div class="room-card__image">
+              <img src="images/rooms/deluxe-room.jpg" alt="Deluxe Room with Mountain View" class="room-card__img"
+                loading="lazy">
+              <span class="room-card__badge">Popular</span>
+            </div>
+            <div class="room-card__content">
+              <h3 class="room-card__title">Deluxe Room</h3>
+              <p class="room-card__description">
+                Large in space and well-appointed with modern décor. A lovely place where one can sit for hours staring
+                out the window towards the horizon.
+              </p>
+              <div class="room-card__amenities">
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 12c2.5 0 4.5-1.5 4.5-4.5S14.5 3 12 3s-4.5 1.5-4.5 4.5S9.5 12 12 12Z" />
+                    <path d="M2 21h20" />
+                    <path d="M12 12v9" />
+                    <path d="M7 21c0-4 5-4 5-9" />
+                    <path d="M17 21c0-4-5-4-5-9" />
+                  </svg>
+                  AC
+                </span>
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+                    <polyline points="17 2 12 7 7 2" />
+                  </svg>
+                  TV
+                </span>
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                    <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                    <line x1="12" y1="20" x2="12.01" y2="20" />
+                  </svg>
+                  WiFi
+                </span>
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                    </path>
+                  </svg>
+                  Mountain View
+                </span>
+              </div>
+              <div class="room-card__footer">
+                <a href="https://booking.trustifyedge.com/home?Token=book_a697fe49e-d0cd-40e9-ae17-51357b40597fe49"
+                  class="btn btn--outline" target="_blank" rel="noopener">
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Room Card 2 -->
+          <article class="room-card fade-in">
+            <div class="room-card__image">
+              <img src="images/rooms/premium-suite.jpg" alt="Super Deluxe with Valley View" class="room-card__img"
+                loading="lazy">
+            </div>
+            <div class="room-card__content">
+              <h3 class="room-card__title">Super Deluxe</h3>
+              <p class="room-card__description">
+                Experience luxury with our super deluxe rooms featuring extra space, elegant furnishings, and panoramic
+                views of the valley.
+              </p>
+              <div class="room-card__amenities">
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 12c2.5 0 4.5-1.5 4.5-4.5S14.5 3 12 3s-4.5 1.5-4.5 4.5S9.5 12 12 12Z" />
+                    <path d="M2 21h20" />
+                    <path d="M12 12v9" />
+                    <path d="M7 21c0-4 5-4 5-9" />
+                    <path d="M17 21c0-4-5-4-5-9" />
+                  </svg>
+                  AC
+                </span>
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+                    <polyline points="17 2 12 7 7 2" />
+                  </svg>
+                  TV
+                </span>
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                    <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                    <line x1="12" y1="20" x2="12.01" y2="20" />
+                  </svg>
+                  WiFi
+                </span>
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+                    <path d="M7 2v20" />
+                    <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+                  </svg>
+                  Dining Area
+                </span>
+              </div>
+              <div class="room-card__footer">
+                <a href="https://booking.trustifyedge.com/home?Token=book_a697fe49e-d0cd-40e9-ae17-51357b40597fe49"
+                  class="btn btn--outline" target="_blank" rel="noopener">
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Room Card 3 -->
+          <article class="room-card fade-in">
+            <div class="room-card__image">
+              <img src="images/rooms/family-room.jpg" alt="Luxury with Multiple Beds" class="room-card__img"
+                loading="lazy">
+              <span class="room-card__badge">Family</span>
+            </div>
+            <div class="room-card__content">
+              <h3 class="room-card__title">Luxury</h3>
+              <p class="room-card__description">
+                Perfect for families, our spacious rooms accommodate everyone comfortably with extra beds and ample
+                living space.
+              </p>
+              <div class="room-card__amenities">
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 12c2.5 0 4.5-1.5 4.5-4.5S14.5 3 12 3s-4.5 1.5-4.5 4.5S9.5 12 12 12Z" />
+                    <path d="M2 21h20" />
+                    <path d="M12 12v9" />
+                    <path d="M7 21c0-4 5-4 5-9" />
+                    <path d="M17 21c0-4-5-4-5-9" />
+                  </svg>
+                  AC
+                </span>
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+                    <polyline points="17 2 12 7 7 2" />
+                  </svg>
+                  TV
+                </span>
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                    <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                    <line x1="12" y1="20" x2="12.01" y2="20" />
+                  </svg>
+                  WiFi
+                </span>
+                <span class="room-card__amenity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                  4 Guests
+                </span>
+              </div>
+              <div class="room-card__footer">
+                <a href="https://booking.trustifyedge.com/home?Token=book_a697fe49e-d0cd-40e9-ae17-51357b40597fe49"
+                  class="btn btn--outline" target="_blank" rel="noopener">
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         AMENITIES SECTION
+         ============================================ -->
+    <section class="amenities section section--lg">
+      <div class="container">
+        <div class="amenities__header fade-in">
+          <span class="section-label">Facilities</span>
+          <h2 class="section-title">Hotel Amenities</h2>
+          <p class="section-subtitle">
+            Everything you need for a comfortable and memorable stay, from wellness facilities to fine dining.
+          </p>
+        </div>
+
+        <div class="amenities__grid stagger">
+          <div class="amenity-card fade-in">
+            <div class="amenity-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12h6" />
+                <path d="M22 12h-6" />
+                <path d="M12 2v6" />
+                <path d="M12 22v-6" />
+                <circle cx="12" cy="12" r="4" />
+              </svg>
+            </div>
+            <h4 class="amenity-card__title">Swimming Pool</h4>
+            <p class="amenity-card__text">Outdoor pool with stunning mountain views</p>
+          </div>
+
+          <div class="amenity-card fade-in">
+            <div class="amenity-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6.5 6.5 11 11" />
+                <path d="m21 21-1-1" />
+                <path d="m3 3 1 1" />
+                <path d="m18 22 4-4" />
+                <path d="m2 6 4-4" />
+                <path d="m3 10 7-7" />
+                <path d="m14 21 7-7" />
+              </svg>
+            </div>
+            <h4 class="amenity-card__title">Fitness Center</h4>
+            <p class="amenity-card__text">Modern gym equipment for your workout routine</p>
+          </div>
+
+          <div class="amenity-card fade-in">
+            <div class="amenity-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+                <path d="M7 2v20" />
+                <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+              </svg>
+            </div>
+            <h4 class="amenity-card__title">Restaurant</h4>
+            <p class="amenity-card__text">In-house dining with local and international cuisine</p>
+          </div>
+
+          <div class="amenity-card fade-in">
+            <div class="amenity-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h4 class="amenity-card__title">Conference Hall</h4>
+            <p class="amenity-card__text">Professional space for business meetings</p>
+          </div>
+
+          <div class="amenity-card fade-in">
+            <div class="amenity-card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+                <path d="m3.3 7 8.7 5 8.7-5" />
+                <path d="M12 22V12" />
+              </svg>
+            </div>
+            <h4 class="amenity-card__title">Banquet Hall</h4>
+            <p class="amenity-card__text">Perfect venue for destination weddings</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ATTRACTIONS SECTION
+         ============================================ -->
+    <section class="attractions section section--lg" id="attractions">
+      <div class="container">
+        <div class="attractions__header fade-in">
+          <span class="section-label">Explore</span>
+          <h2 class="section-title">Nearby Attractions</h2>
+          <p class="section-subtitle mx-auto">
+            Discover the beauty of Himachal Pradesh with these nearby destinations and experiences.
+          </p>
+        </div>
+
+        <div class="grid grid-3 stagger">
+          <article class="attraction-card fade-in">
+            <img src="images/attractions/dalhousie.jpg" alt="Dalhousie Hill Station" class="attraction-card__image"
+              loading="lazy">
+            <div class="attraction-card__overlay"></div>
+            <div class="attraction-card__content">
+              <span class="attraction-card__distance">8 km from hotel</span>
+              <h3 class="attraction-card__title">Dalhousie</h3>
+              <p class="attraction-card__description">
+                A charming hill station with colonial architecture, scenic trails, and stunning mountain views across
+                five hills.
+              </p>
+            </div>
+          </article>
+
+          <article class="attraction-card fade-in">
+            <img src="images/attractions/khajjiar.jpg" alt="Khajjiar - Mini Switzerland" class="attraction-card__image"
+              loading="lazy">
+            <div class="attraction-card__overlay"></div>
+            <div class="attraction-card__content">
+              <span class="attraction-card__distance">28.6 km from hotel</span>
+              <h3 class="attraction-card__title">Khajjiar</h3>
+              <p class="attraction-card__description">
+                Known as "Mini Switzerland of India," featuring a stunning meadow surrounded by dense forests and
+                mountain peaks.
+              </p>
+            </div>
+          </article>
+
+          <article class="attraction-card fade-in">
+            <img src="images/attractions/dharamshala.jpg" alt="Dharamshala and McLeod Ganj"
+              class="attraction-card__image" loading="lazy">
+            <div class="attraction-card__overlay"></div>
+            <div class="attraction-card__content">
+              <span class="attraction-card__distance">99 km from hotel</span>
+              <h3 class="attraction-card__title">Dharamshala</h3>
+              <p class="attraction-card__description">
+                Home to the Dalai Lama and Tibetan culture, featuring monasteries, cafes, and the majestic Triund trek.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         GALLERY SECTION
+         ============================================ -->
+    <section class="gallery section section--lg" id="gallery">
+      <div class="container">
+        <div class="gallery__header fade-in">
+          <span class="section-label">Gallery</span>
+          <h2 class="section-title">Experience Our Property</h2>
+        </div>
+
+        <div class="gallery__grid stagger">
+          <div class="gallery__item fade-in" data-lightbox="gallery">
+            <img src="images/gallery/exterior-mountain-view.jpg" alt="Hotel exterior with mountain backdrop"
+              loading="lazy">
+            <div class="gallery__overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="11" y1="8" x2="11" y2="14" />
+                <line x1="8" y1="11" x2="14" y2="11" />
+              </svg>
+            </div>
+          </div>
+          <div class="gallery__item fade-in" data-lightbox="gallery">
+            <img src="images/gallery/cozy-room-interior.jpg" alt="Cozy room interior" loading="lazy">
+            <div class="gallery__overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="11" y1="8" x2="11" y2="14" />
+                <line x1="8" y1="11" x2="14" y2="11" />
+              </svg>
+            </div>
+          </div>
+          <div class="gallery__item fade-in" data-lightbox="gallery">
+            <img src="images/gallery/restaurant-dining.jpg" alt="Restaurant dining area" loading="lazy">
+            <div class="gallery__overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="11" y1="8" x2="11" y2="14" />
+                <line x1="8" y1="11" x2="14" y2="11" />
+              </svg>
+            </div>
+          </div>
+          <div class="gallery__item fade-in" data-lightbox="gallery">
+            <img src="images/gallery/swimming-pool.jpg" alt="Swimming pool area" loading="lazy">
+            <div class="gallery__overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="11" y1="8" x2="11" y2="14" />
+                <line x1="8" y1="11" x2="14" y2="11" />
+              </svg>
+            </div>
+          </div>
+          <div class="gallery__item fade-in" data-lightbox="gallery">
+            <img src="images/gallery/terrace-mountain-view.jpg" alt="Mountain view from terrace" loading="lazy">
+            <div class="gallery__overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="11" y1="8" x2="11" y2="14" />
+                <line x1="8" y1="11" x2="14" y2="11" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS SECTION
+         ============================================ -->
+    <!-- ============================================
+         WEDDING SECTION
+         ============================================ -->
+    <section class="wedding section section--lg" id="weddings">
+      <div class="container">
+        <div class="wedding__grid">
+          <div class="wedding__content fade-in-left">
+            <span class="section-label">Celebrations</span>
+            <h2 class="section-title">Destination Weddings</h2>
+            <p class="wedding__text">
+              Transform your special day into an unforgettable memory amidst the breathtaking Himalayas.
+              Hotel Nature Valley offers the perfect backdrop for your dream wedding directly in the lap of nature.
+            </p>
+
+            <ul class="wedding__features">
+              <li>
+                <div class="wedding__feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </div>
+                <span>Spacious Banquet Halls & Lawns</span>
+              </li>
+              <li>
+                <div class="wedding__feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                  </svg>
+                </div>
+                <span>Full Event Support & Catering</span>
+              </li>
+              <li>
+                <div class="wedding__feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                    <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                    <line x1="12" y1="20" x2="12.01" y2="20" />
+                  </svg>
+                </div>
+                <span>Ample Parking for Guests</span>
+              </li>
+            </ul>
+
+            <button class="btn btn--primary btn--lg"
+              onclick="document.getElementById('wedding-modal').classList.add('modal--open')">
+              Plan Your Wedding
+            </button>
+          </div>
+
+          <div class="wedding__image-wrapper fade-in-right">
+            <img src="images/weddings/wedding-placeholder.png" alt="Destination Wedding Setup" class="wedding__image"
+              loading="lazy">
+            <div class="wedding__overlay"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wedding Enquiry Modal -->
+      <div class="modal" id="wedding-modal">
+        <div class="modal__content">
+          <button class="modal__close"
+            onclick="document.getElementById('wedding-modal').classList.remove('modal--open')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <h3>Plan Your Wedding</h3>
+          <p>Tell us about your requirements and we'll create a custom package for you.</p>
+          <form class="contact__form" id="wedding-form" style="margin-top: 20px;">
+            <div class="form-group">
+              <label for="w-name">Name</label>
+              <input type="text" id="w-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="w-phone">Phone Number</label>
+              <input type="tel" id="w-phone" name="phone" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="w-date">Tentative Date</label>
+                <input type="date" id="w-date" name="date">
+              </div>
+              <div class="form-group">
+                <label for="w-guests">Est. Guests</label>
+                <input type="number" id="w-guests" name="guests">
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary" style="width: 100%;">Submit Enquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FOUNDERS & TRUST SECTION
+         ============================================ -->
+    <section id="founders" class="section section--lg founders">
+      <div class="container">
+        <div class="founders__grid">
+          <!-- Image Column -->
+          <div class="founders__image-wrapper">
+            <div class="founders__image-container">
+              <img src="images/founders/founders.jpg" alt="Our Founders, welcoming you to Nature Valley"
+                class="founders__img" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="founders__content">
+            <span class="section-label">Our Story</span>
+            <h2 class="section-title">Perfectly Pleasant</h2>
+
+            <div class="founders__vision">
+              <p class="founders__quote">
+                "We didn't set out to build a luxury resort, but a home in the hills. For us, hospitality isn't about
+                grand gestures—it's about the warmth of a smile, the silence of the cedars, and the simple joy of being
+                looked after."
+              </p>
+              <p class="founders__signoff">
+                — Ajay and Ekta Khanka
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guest Reviews (Trust Indicators) -->
+        <div class="reviews">
+          <div class="reviews__header text-center">
+            <span class="section-label">Guest Experiences</span>
+            <h3>What our guests say</h3>
+          </div>
+
+          <div class="reviews__grid grid grid-3">
+            <!-- Review 1: Family -->
+            <article class="review-card">
+              <div class="review-card__header">
+                <span class="review-card__name">Sarah M.</span>
+                <span class="review-card__platform">Google Review</span>
+              </div>
+              <p class="review-card__text">
+                "Honestly the most peaceful trip we've had as a family. The kids loved the open space, and we loved how
+                genuinely kind the staff were. Felt less like a hotel, more like visiting old friends."
+              </p>
+              <div class="review-card__stars">★★★★★</div>
+            </article>
+
+            <!-- Review 2: Couple -->
+            <article class="review-card">
+              <div class="review-card__header">
+                <span class="review-card__name">Arjun & Priya</span>
+                <span class="review-card__platform">TripAdvisor</span>
+              </div>
+              <p class="review-card__text">
+                "The view from the balcony is worth everything. We spent hours just watching the mist roll in. Simple,
+                clean rooms and the food tasted exactly like home cooked meals."
+              </p>
+              <div class="review-card__stars">★★★★★</div>
+            </article>
+
+            <!-- Review 3: Solo/Peace -->
+            <article class="review-card">
+              <div class="review-card__header">
+                <span class="review-card__name">David K.</span>
+                <span class="review-card__platform">Google Review</span>
+              </div>
+              <p class="review-card__text">
+                "If you want loud parties, go elsewhere. If you want to hear birdsong and read a book in total silence,
+                this is the place. A rare find in Dalhousie."
+              </p>
+              <div class="review-card__stars">★★★★★</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION
+         ============================================ -->
+    <section class="contact section section--lg" id="contact">
+      <div class="container">
+        <div class="contact__grid">
+          <div class="contact__info fade-in-left">
+            <span class="section-label">Contact</span>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="contact__text">
+              Have questions or ready to book your stay? We're here to help make your visit to Nature Valley
+              unforgettable.
+            </p>
+
+            <div class="contact__details">
+              <div class="contact__item">
+                <div class="contact__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact__item-title">Phone</span>
+                  <p class="contact__item-text">
+                    <a href="tel:+919816049850">+91 98160 49850</a><br>
+                    <a href="tel:+919815049850">+91 98150 49850</a><br>
+                    <a href="tel:+919779106655">+91 97791 06655</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact__item">
+                <div class="contact__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact__item-title">Email</span>
+                  <p class="contact__item-text">
+                    <a href="mailto:reservation@naturevalley.in">reservation@naturevalley.in</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact__item">
+                <div class="contact__icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact__item-title">Address</span>
+                  <p class="contact__item-text">
+                    Hotel Nature Valley<br>
+                    Dalhousie Road, Surkhigala<br>
+                    Banikhet, Himachal Pradesh 176303
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__form-wrapper fade-in-right">
+            <form class="contact__form" id="contact-form" action="#" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                </div>
+                <div class="form-group">
+                  <label for="guests">Number of Guests</label>
+                  <input type="number" id="guests" name="guests" placeholder="2" min="1" max="10">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your plans or any special requests..."
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--lg">Send Message</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="contact__map fade-in">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3379.123456789!2d75.94!3d32.42!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391c5f0000000000%3A0x0000000000000000!2sHotel%20Nature%20Valley!5e0!3m2!1sen!2sin!4v1234567890"
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Hotel Nature Valley Location Map">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="images/icons/logo.png" alt="Hotel Nature Valley" class="footer__logo">
+          <p class="footer__tagline">Perfectly Pleasant</p>
+          <p class="footer__description">
+            A tranquil retreat nestled in the Himalayas, where nature's serenity meets warm hospitality.
+          </p>
+        </div>
+
+        <div class="footer__nav">
+          <h4 class="footer__title">Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#rooms">Rooms & Suites</a></li>
+            <li><a href="#attractions">Attractions</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+
+
+        <div class="footer__contact">
+          <h4 class="footer__title">Contact Us</h4>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span><a href="tel:+919779106655">+91 97791 06655</a></span>
+          </div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <span><a href="mailto:reservation@naturevalley.in">reservation@naturevalley.in</a></span>
+          </div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Dalhousie Road, Banikhet<br>Himachal Pradesh 176303</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          © 2026 Hotel Nature Valley. All rights reserved.
+        </p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox__content">
+      <button class="lightbox__close" aria-label="Close lightbox">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <img src="" alt="Gallery Image" class="lightbox__image" id="lightbox-image">
+      <button class="lightbox__nav lightbox__nav--prev" aria-label="Previous image">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <button class="lightbox__nav lightbox__nav--next" aria-label="Next image">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
