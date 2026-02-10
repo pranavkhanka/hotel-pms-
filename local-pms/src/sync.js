@@ -22,16 +22,17 @@ const syncWorker = async () => {
 
 const pushChanges = async () => {
     // 1. Gather dirty records
+    const roomTypes = await all("SELECT * FROM room_types WHERE sync_status = 'pending'");
     const rooms = await all("SELECT * FROM rooms WHERE sync_status = 'pending'");
     const guests = await all("SELECT * FROM guests WHERE sync_status = 'pending'");
     const bookings = await all("SELECT * FROM bookings WHERE sync_status = 'pending'");
 
-    if (rooms.length === 0 && guests.length === 0 && bookings.length === 0) {
+    if (roomTypes.length === 0 && rooms.length === 0 && guests.length === 0 && bookings.length === 0) {
         console.log('[Sync] No local changes to push.');
         return;
     }
 
-    const payload = { rooms, guests, bookings };
+    const payload = { room_types: roomTypes, rooms, guests, bookings };
 
     // 2. Send to Cloud
     const response = await fetch(`${API_URL}/sync/push`, {
@@ -53,11 +54,12 @@ const pushChanges = async () => {
         }
     };
 
+    await markSynced('room_types', roomTypes);
     await markSynced('rooms', rooms);
     await markSynced('guests', guests);
     await markSynced('bookings', bookings);
 
-    console.log(`[Sync] Pushed: ${rooms.length} rooms, ${guests.length} guests, ${bookings.length} bookings.`);
+    console.log(`[Sync] Pushed: ${roomTypes.length} types, ${rooms.length} rooms, ${guests.length} guests, ${bookings.length} bookings.`);
 };
 
 const pullChanges = async () => {
