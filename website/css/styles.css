@@ -14,34 +14,49 @@
    =================================================== */
 :root {
   /* Color Palette - Nature Inspired */
-  --color-primary: #2D5A3D;          /* Deep forest green */
-  --color-primary-light: #3D7A52;    /* Lighter forest green */
-  --color-primary-dark: #1E3D2A;     /* Darker forest green */
-  --color-secondary: #4A7C5C;        /* Sage green */
-  --color-accent: #C9A962;           /* Warm gold */
-  --color-accent-hover: #B89952;     /* Gold hover state */
-  --color-brown: #8B7355;            /* Earthy wood tones */
-  --color-brown-light: #A68B6A;      /* Lighter brown */
-  
+  --color-primary: #2D5A3D;
+  /* Deep forest green */
+  --color-primary-light: #3D7A52;
+  /* Lighter forest green */
+  --color-primary-dark: #1E3D2A;
+  /* Darker forest green */
+  --color-secondary: #4A7C5C;
+  /* Sage green */
+  --color-accent: #C9A962;
+  /* Warm gold */
+  --color-accent-hover: #B89952;
+  /* Gold hover state */
+  --color-brown: #8B7355;
+  /* Earthy wood tones */
+  --color-brown-light: #A68B6A;
+  /* Lighter brown */
+
   /* Neutrals */
   --color-white: #FFFFFF;
-  --color-off-white: #F8F6F2;        /* Warm white */
-  --color-cream: #F5F2EB;            /* Cream background */
-  --color-gray-light: #E8E4DD;       /* Light gray */
-  --color-gray: #9A9590;             /* Medium gray */
-  --color-gray-dark: #6B6560;        /* Dark gray */
-  --color-text: #1A2A1F;             /* Near-black with green */
-  --color-text-light: #3A4A3F;       /* Lighter text */
-  
+  --color-off-white: #F8F6F2;
+  /* Warm white */
+  --color-cream: #F5F2EB;
+  /* Cream background */
+  --color-gray-light: #E8E4DD;
+  /* Light gray */
+  --color-gray: #9A9590;
+  /* Medium gray */
+  --color-gray-dark: #6B6560;
+  /* Dark gray */
+  --color-text: #1A2A1F;
+  /* Near-black with green */
+  --color-text-light: #3A4A3F;
+  /* Lighter text */
+
   /* Overlay Colors */
   --overlay-dark: rgba(26, 42, 31, 0.7);
   --overlay-light: rgba(248, 246, 242, 0.95);
-  
+
   /* Typography */
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-accent: 'Cormorant Garamond', Georgia, serif;
-  
+
   /* Font Sizes - Fluid Typography */
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
@@ -52,7 +67,7 @@
   --text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 3rem);
   --text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 4rem);
   --text-5xl: clamp(3rem, 2.25rem + 3.75vw, 5.5rem);
-  
+
   /* Spacing Scale */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -67,31 +82,31 @@
   --space-20: 5rem;
   --space-24: 6rem;
   --space-32: 8rem;
-  
+
   /* Layout */
   --container-max: 1400px;
   --container-padding: clamp(1rem, 5vw, 3rem);
-  
+
   /* Borders & Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-full: 9999px;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(26, 42, 31, 0.05);
   --shadow-md: 0 4px 6px rgba(26, 42, 31, 0.07), 0 2px 4px rgba(26, 42, 31, 0.05);
   --shadow-lg: 0 10px 15px rgba(26, 42, 31, 0.1), 0 4px 6px rgba(26, 42, 31, 0.05);
   --shadow-xl: 0 20px 25px rgba(26, 42, 31, 0.1), 0 10px 10px rgba(26, 42, 31, 0.04);
   --shadow-2xl: 0 25px 50px rgba(26, 42, 31, 0.15);
-  
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 300ms ease;
   --transition-slow: 500ms ease;
   --transition-slower: 700ms ease;
-  
+
   /* Z-Index Scale */
   --z-dropdown: 100;
   --z-sticky: 200;
@@ -104,7 +119,9 @@
 /* ===================================================
    2. CSS RESET & BASE STYLES
    =================================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -152,19 +169,41 @@ body {
 /* ===================================================
    3. TYPOGRAPHY
    =================================================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 600;
   line-height: 1.2;
   color: var(--color-text);
 }
 
-h1 { font-size: var(--text-5xl); }
-h2 { font-size: var(--text-4xl); }
-h3 { font-size: var(--text-3xl); }
-h4 { font-size: var(--text-2xl); }
-h5 { font-size: var(--text-xl); }
-h6 { font-size: var(--text-lg); }
+h1 {
+  font-size: var(--text-5xl);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+}
+
+h5 {
+  font-size: var(--text-xl);
+}
+
+h6 {
+  font-size: var(--text-lg);
+}
 
 p {
   margin-bottom: var(--space-4);
@@ -223,11 +262,22 @@ a:hover {
   padding: var(--space-32) 0;
 }
 
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
+.text-center {
+  text-align: center;
+}
 
-.mx-auto { margin-left: auto; margin-right: auto; }
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Grid System */
 .grid {
@@ -235,27 +285,65 @@ a:hover {
   gap: var(--space-8);
 }
 
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
 
 @media (max-width: 1024px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Flexbox Utilities */
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.gap-4 { gap: var(--space-4); }
-.gap-8 { gap: var(--space-8); }
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}
 
 /* ===================================================
    5. BUTTONS
@@ -437,7 +525,7 @@ a:hover {
   .nav__toggle {
     display: flex;
   }
-  
+
   .nav__list {
     position: fixed;
     top: 0;
@@ -452,29 +540,29 @@ a:hover {
     gap: var(--space-8);
     transition: right var(--transition-slow);
   }
-  
+
   .nav__list--open {
     right: 0;
   }
-  
+
   .nav__link {
     font-size: var(--text-xl);
     color: var(--color-white);
   }
-  
+
   .nav__cta {
     margin-left: 0;
     margin-top: var(--space-8);
   }
-  
+
   .nav__toggle--open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
-  
+
   .nav__toggle--open span:nth-child(2) {
     opacity: 0;
   }
-  
+
   .nav__toggle--open span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
@@ -521,12 +609,10 @@ a:hover {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 42, 31, 0.4) 0%,
-    rgba(26, 42, 31, 0.6) 50%,
-    rgba(26, 42, 31, 0.8) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(26, 42, 31, 0.4) 0%,
+      rgba(26, 42, 31, 0.6) 50%,
+      rgba(26, 42, 31, 0.8) 100%);
   z-index: -1;
 }
 
@@ -625,8 +711,17 @@ a:hover {
 }
 
 @keyframes scrollBounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
-  50% { transform: translateX(-50%) translateY(10px); opacity: 0.5; }
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0.5;
+  }
 }
 
 @keyframes fadeInUp {
@@ -637,7 +732,9 @@ a:hover {
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ===================================================
@@ -736,11 +833,11 @@ a:hover {
     grid-template-columns: 1fr;
     gap: var(--space-10);
   }
-  
+
   .about__image {
     height: 400px;
   }
-  
+
   .about__image-accent,
   .about__deer {
     display: none;
@@ -983,22 +1080,18 @@ a:hover {
 .attraction-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(26, 42, 31, 0.9) 0%,
-    rgba(26, 42, 31, 0.3) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,
+      rgba(26, 42, 31, 0.9) 0%,
+      rgba(26, 42, 31, 0.3) 50%,
+      transparent 100%);
   transition: background var(--transition-base);
 }
 
 .attraction-card:hover .attraction-card__overlay {
-  background: linear-gradient(
-    to top,
-    rgba(45, 90, 61, 0.95) 0%,
-    rgba(45, 90, 61, 0.5) 50%,
-    rgba(45, 90, 61, 0.2) 100%
-  );
+  background: linear-gradient(to top,
+      rgba(45, 90, 61, 0.95) 0%,
+      rgba(45, 90, 61, 0.5) 50%,
+      rgba(45, 90, 61, 0.2) 100%);
 }
 
 .attraction-card__content {
@@ -1113,7 +1206,7 @@ a:hover {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 220px);
   }
-  
+
   .gallery__item:nth-child(1) {
     grid-column: span 2;
     grid-row: span 1;
@@ -1125,11 +1218,11 @@ a:hover {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
-  
+
   .gallery__item {
     height: 250px;
   }
-  
+
   .gallery__item:nth-child(1) {
     grid-column: span 1;
     height: 300px;
@@ -1440,7 +1533,7 @@ a:hover {
 .wedding__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
 }
 
 @media (max-width: 1024px) {
@@ -1448,7 +1541,7 @@ a:hover {
     grid-template-columns: 1fr;
     gap: var(--space-10);
   }
-  
+
   .wedding__image-wrapper {
     height: 350px;
     order: -1;
@@ -1633,13 +1726,13 @@ a:hover {
   .footer__grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .footer__brand {
     grid-column: span 2;
     max-width: 100%;
     text-align: center;
   }
-  
+
   .footer__brand .footer__logo {
     margin-left: auto;
     margin-right: auto;
@@ -1651,11 +1744,11 @@ a:hover {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .footer__brand {
     grid-column: span 1;
   }
-  
+
   .footer__bottom {
     flex-direction: column;
     text-align: center;
@@ -1730,8 +1823,13 @@ a:hover {
   background: var(--color-accent);
 }
 
-.lightbox__nav--prev { left: var(--space-4); }
-.lightbox__nav--next { right: var(--space-4); }
+.lightbox__nav--prev {
+  left: var(--space-4);
+}
+
+.lightbox__nav--next {
+  right: var(--space-4);
+}
 
 /* ===================================================
    17. ANIMATIONS & SCROLL EFFECTS
@@ -1770,12 +1868,29 @@ a:hover {
 }
 
 /* Stagger delay for grid children */
-.stagger > *:nth-child(1) { transition-delay: 0ms; }
-.stagger > *:nth-child(2) { transition-delay: 100ms; }
-.stagger > *:nth-child(3) { transition-delay: 200ms; }
-.stagger > *:nth-child(4) { transition-delay: 300ms; }
-.stagger > *:nth-child(5) { transition-delay: 400ms; }
-.stagger > *:nth-child(6) { transition-delay: 500ms; }
+.stagger>*:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.stagger>*:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.stagger>*:nth-child(3) {
+  transition-delay: 200ms;
+}
+
+.stagger>*:nth-child(4) {
+  transition-delay: 300ms;
+}
+
+.stagger>*:nth-child(5) {
+  transition-delay: 400ms;
+}
+
+.stagger>*:nth-child(6) {
+  transition-delay: 500ms;
+}
 
 /* ===================================================
    18. UTILITY CLASSES
@@ -1792,24 +1907,49 @@ a:hover {
   border: 0;
 }
 
-.hidden { display: none !important; }
-.visible { visibility: visible; }
-.invisible { visibility: hidden; }
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
 
 /* Background Colors */
-.bg-primary { background: var(--color-primary); }
-.bg-white { background: var(--color-white); }
-.bg-cream { background: var(--color-cream); }
+.bg-primary {
+  background: var(--color-primary);
+}
+
+.bg-white {
+  background: var(--color-white);
+}
+
+.bg-cream {
+  background: var(--color-cream);
+}
 
 /* Text Colors */
-.text-white { color: var(--color-white); }
-.text-primary { color: var(--color-primary); }
-.text-accent { color: var(--color-accent); }
+.text-white {
+  color: var(--color-white);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
 
 /* ===================================================
    19. PRINT STYLES
    =================================================== */
 @media print {
+
   .header,
   .hero__video,
   .hero__scroll,
@@ -1818,19 +1958,20 @@ a:hover {
   .lightbox {
     display: none !important;
   }
-  
+
   body {
     font-size: 12pt;
     line-height: 1.5;
     color: #000;
     background: #fff;
   }
-  
+
   .section {
     padding: 20pt 0;
     page-break-inside: avoid;
   }
 }
+
 /* ===================================================
    15. FOUNDERS SECTION
    =================================================== */
@@ -1858,10 +1999,11 @@ a:hover {
   position: relative;
   width: 100%;
   max-width: 500px;
-  border-radius: var(--radius-xl); /* Soft rounded corners */
+  border-radius: var(--radius-xl);
+  /* Soft rounded corners */
   overflow: hidden;
   /* Subtle frame effect instead of heavy shadow */
-  box-shadow: 0 0 0 12px var(--color-off-white); 
+  box-shadow: 0 0 0 12px var(--color-off-white);
 }
 
 .founders__img {
@@ -1870,7 +2012,7 @@ a:hover {
   display: block;
   object-fit: cover;
   /* Ensuring natural, warm tone */
-  filter: sepia(10%); 
+  filter: sepia(10%);
 }
 
 /* Visionary Content */
@@ -1883,7 +2025,8 @@ a:hover {
 }
 
 .founders__quote {
-  font-family: var(--font-heading); /* Serif */
+  font-family: var(--font-heading);
+  /* Serif */
   font-size: var(--text-2xl);
   font-weight: 500;
   line-height: 1.5;
@@ -1897,7 +2040,8 @@ a:hover {
   content: '“';
   font-family: serif;
   font-size: 8rem;
-  color: var(--color-accent); /* Gold color */
+  color: var(--color-accent);
+  /* Gold color */
   position: absolute;
   top: -60px;
   left: -40px;
@@ -1953,7 +2097,8 @@ a:hover {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: var(--space-4);
-  border-bottom: 1px solid var(--color-gray-light); /* Subtle divider */
+  border-bottom: 1px solid var(--color-gray-light);
+  /* Subtle divider */
   padding-bottom: var(--space-2);
 }
 
@@ -1996,7 +2141,8 @@ a:hover {
   }
 
   .founders__image-wrapper {
-    order: -1; /* Image first on mobile */
+    order: -1;
+    /* Image first on mobile */
   }
 
   .founders__image-container {
@@ -2012,4 +2158,514 @@ a:hover {
   .reviews__grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ============================================
+   STICKY BOOKING WIDGET
+   ============================================ */
+
+/* Mobile Float Bar */
+.booking-widget-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  padding: 1rem;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.booking-widget-mobile.visible {
+  transform: translateY(0);
+}
+
+.booking-widget-mobile.hidden {
+  transform: translateY(100%);
+}
+
+.booking-widget-mobile__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-widget-mobile__label {
+  display: block;
+  font-family: var(--font-accent);
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.booking-widget-mobile__sub {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+/* Booking Modal Overlay */
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  /* Bottom sheet on mobile */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.booking-modal.modal--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.booking-modal__content {
+  background: var(--color-white);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  position: relative;
+  z-index: 2001;
+  /* Ensure on top */
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  /* Add shadow for depth */
+}
+
+.booking-modal.modal--open .booking-modal__content {
+  transform: translateY(0);
+}
+
+.booking-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-light);
+  padding: 0.5rem;
+  transition: color 0.2s;
+}
+
+.booking-modal__close:hover {
+  color: var(--color-primary);
+}
+
+.booking-modal__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.booking-modal__header h3 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Form Styles */
+.booking-form__grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.booking-form__group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.booking-form__group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-off-white);
+}
+
+.booking-form__group input:focus {
+  outline: 2px solid var(--color-accent);
+  background: white;
+}
+
+/* Guest Dropdown */
+.booking-form__select-wrapper {
+  position: relative;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-text-light);
+}
+
+/* Guest Dropdown - 3 Columns */
+.guest-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-width: 320px;
+  /* Ensure 3 columns fit */
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  z-index: 10;
+  display: none;
+  margin-top: 0.5rem;
+}
+
+.guest-dropdown.active {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+
+.guest-dropdown__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+.guest-counter-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.guest-counter__label {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.guest-counter__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Tighter gap for columns */
+}
+
+.guest-counter__controls button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary);
+  background: white;
+  color: var(--color-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.guest-counter__controls button:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.guest-counter__controls span {
+  font-weight: 600;
+  font-size: 1rem;
+  width: 16px;
+  text-align: center;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Desktop Overrides */
+@media (min-width: 768px) {
+  .booking-widget-mobile {
+    display: none;
+    /* Hide float bar on desktop if integrated in header */
+  }
+
+  .booking-modal {
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .booking-modal__content {
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    max-width: 500px;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+
+  /* Guest Dropdown - 3 Columns */
+  /* Guest Dropdown - 3 Columns override removed for dynamic list view */
+  /* .guest-dropdown { ... } removed to respect global static positioning */
+
+  .guest-dropdown.active {
+    display: block;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .guest-dropdown__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .guest-counter-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .guest-counter__label {
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 0.9rem;
+  }
+
+  .guest-counter__controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Tighter gap for columns */
+  }
+
+  .guest-counter__controls button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--color-primary);
+    background: white;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
+    transition: all 0.2s;
+    padding: 0;
+  }
+
+  .guest-counter__controls button:hover {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .guest-counter__controls span {
+    font-weight: 600;
+    font-size: 1rem;
+    width: 16px;
+    text-align: center;
+  }
+}
+
+/* --- FORCE VISIBILITY OVERRIDES --- */
+.booking-modal.modal--open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+.booking-modal.modal--open .booking-modal__content {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  display: block !important;
+}
+
+/* ============================================
+   DYNAMIC ROOM GUEST SELECTOR
+   ============================================ */
+/* Guest Dropdown - Inline Style for "Single Go" View */
+.guest-dropdown {
+  position: relative;
+  /* Changed from absolute to flow with content */
+  top: auto;
+  left: auto;
+  width: 100%;
+  min-width: 0;
+  box-shadow: none;
+  /* Remove shadow as it is now inline */
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  z-index: 10;
+  display: none;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  /* Space before Check Availability */
+  background: #fafafa;
+  /* Slight var to distinguish */
+}
+
+.guest-dropdown.active {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+
+/* ============================================
+   DYNAMIC ROOM GUEST SELECTOR
+   ============================================ */
+.rooms-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  padding-right: 4px;
+  /* For scrollbar space */
+}
+
+/* Custom Scrollbar for rooms container */
+.rooms-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.rooms-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.rooms-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.room-row {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+.room-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+}
+
+.room-remove {
+  font-size: 0.75rem;
+  color: #c53030;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.room-remove:hover {
+  text-decoration: underline;
+}
+
+.room-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control-label {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: white;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.control-btn:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: #f0fdf4;
+}
+
+.control-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: #eee;
+}
+
+.control-value {
+  font-weight: 600;
+  font-size: 0.95rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Ensure DONE button is always visible */
+.guest-dropdown .btn--secondary {
+  opacity: 1 !important;
+  visibility: visible !important;
+  cursor: pointer;
+  display: block;
 }

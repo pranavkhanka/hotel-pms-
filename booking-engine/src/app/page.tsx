@@ -14,7 +14,7 @@ export default function Home() {
 
     return (
         <main>
-            {/* Hero Section */}
+            {/* ... Header and Booking Section ... */}
             <header style={{
                 position: 'relative',
                 height: '70vh',
@@ -33,12 +33,12 @@ export default function Home() {
                     inset: 0,
                     background: 'linear-gradient(to bottom, rgba(26,42,31,0.4), rgba(26,42,31,0.7))'
                 }}></div>
-                
+
                 <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '800px' }}>
-                    <p style={{ 
-                        fontFamily: 'var(--font-accent)', 
-                        fontSize: '1.5rem', 
-                        fontStyle: 'italic', 
+                    <p style={{
+                        fontFamily: 'var(--font-accent)',
+                        fontSize: '1.5rem',
+                        fontStyle: 'italic',
                         color: 'var(--color-accent)',
                         marginBottom: '1rem'
                     }}>Perfectly Pleasant</p>
@@ -65,12 +65,12 @@ export default function Home() {
                         <input type="date" onChange={e => setDates({ ...dates, checkOut: e.target.value })} />
                     </div>
                     <div className="input-group" style={{ marginBottom: 0 }}>
-                         <label>Guests</label>
-                         <select>
-                             <option>2 Adults</option>
-                             <option>2 Adults, 1 Child</option>
-                             <option>4 Adults</option>
-                         </select>
+                        <label>Guests</label>
+                        <select>
+                            <option>2 Adults</option>
+                            <option>2 Adults, 1 Child</option>
+                            <option>4 Adults</option>
+                        </select>
                     </div>
                     <button className="btn" style={{ height: '46px', width: '100%' }}>Check Availability</button>
                 </div>
@@ -79,10 +79,10 @@ export default function Home() {
             {/* Rooms List */}
             <section className="container" style={{ padding: '80px 20px' }}>
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-                    <span style={{ 
-                        color: 'var(--color-accent)', 
-                        textTransform: 'uppercase', 
-                        letterSpacing: '0.15em', 
+                    <span style={{
+                        color: 'var(--color-accent)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.15em',
                         fontWeight: 600,
                         fontSize: '0.9rem'
                     }}>Accommodations</span>
@@ -96,7 +96,7 @@ export default function Home() {
                     {rooms.map(room => (
                         <div key={room.id} className="card">
                             <div style={{ position: 'relative', height: '250px', backgroundColor: '#e5e7eb' }}>
-                                 {/* Placeholder if image loads fail, usually handled by Next Image but using img for static export simplicity */}
+                                {/* Placeholder if image loads fail, usually handled by Next Image but using img for static export simplicity */}
                                 <img src={room.image} alt={room.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                 <span style={{
                                     position: 'absolute',
@@ -122,10 +122,10 @@ export default function Home() {
                                     <span>👥 {room.capacity} Guests</span>
                                     <span>☕ Breakfast Incl.</span>
                                 </div>
-                                <Link href={`/checkout?room=${room.id}&price=${room.price}`} className="btn-outline" style={{ 
-                                    display: 'block', 
-                                    textAlign: 'center', 
-                                    padding: '12px', 
+                                <Link href={`/checkout?room=${room.id}&price=${room.price}`} className="btn-outline" style={{
+                                    display: 'block',
+                                    textAlign: 'center',
+                                    padding: '12px',
                                     borderRadius: 'var(--radius-sm)',
                                     textDecoration: 'none',
                                     fontWeight: 600,

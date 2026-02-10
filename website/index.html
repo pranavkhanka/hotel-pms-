@@ -40,7 +40,7 @@
     rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=5">
 
   <title>Hotel Nature Valley | Perfectly Pleasant | Dalhousie, Himachal Pradesh</title>
 </head>
@@ -66,8 +66,7 @@
           <li><a href="#attractions" class="nav__link">Attractions</a></li>
           <li><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
-        <a href="https://booking.trustifyedge.com/home?Token=book_a697fe49e-d0cd-40e9-ae17-51357b40597fe49"
-          class="btn btn--primary nav__cta" target="_blank" rel="noopener">
+        <a href="#" class="btn btn--primary nav__cta" onclick="openBookingWidget()">
           Book Now
         </a>
         <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -100,8 +99,7 @@
           Dalhousie.
         </p>
         <div class="hero__cta">
-          <a href="https://booking.trustifyedge.com/home?Token=book_a697fe49e-d0cd-40e9-ae17-51357b40597fe49"
-            class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+          <a href="#" class="btn btn--primary btn--lg" onclick="openBookingWidget()">
             Book Your Stay
           </a>
           <a href="#rooms" class="btn btn--secondary btn--lg">
@@ -235,6 +233,7 @@
                 Large in space and well-appointed with modern décor. A lovely place where one can sit for hours staring
                 out the window towards the horizon.
               </p>
+              <div class="room-card__price" id="price-deluxe">Loading rates...</div>
               <div class="room-card__amenities">
                 <span class="room-card__amenity">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -276,8 +275,7 @@
                 </span>
               </div>
               <div class="room-card__footer">
-                <a href="https://booking.trustifyedge.com/home?Token=book_a697fe49e-d0cd-40e9-ae17-51357b40597fe49"
-                  class="btn btn--outline" target="_blank" rel="noopener">
+                <a href="#" class="btn btn--outline" onclick="openBookingWidget()">
                   Book Now
                 </a>
               </div>
@@ -296,6 +294,7 @@
                 Experience luxury with our super deluxe rooms featuring extra space, elegant furnishings, and panoramic
                 views of the valley.
               </p>
+              <div class="room-card__price" id="price-super-deluxe">Loading rates...</div>
               <div class="room-card__amenities">
                 <span class="room-card__amenity">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -337,8 +336,7 @@
                 </span>
               </div>
               <div class="room-card__footer">
-                <a href="https://booking.trustifyedge.com/home?Token=book_a697fe49e-d0cd-40e9-ae17-51357b40597fe49"
-                  class="btn btn--outline" target="_blank" rel="noopener">
+                <a href="#" class="btn btn--outline" onclick="openBookingWidget()">
                   Book Now
                 </a>
               </div>
@@ -358,6 +356,7 @@
                 Perfect for families, our spacious rooms accommodate everyone comfortably with extra beds and ample
                 living space.
               </p>
+              <div class="room-card__price" id="price-luxury">Loading rates...</div>
               <div class="room-card__amenities">
                 <span class="room-card__amenity">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -400,8 +399,7 @@
                 </span>
               </div>
               <div class="room-card__footer">
-                <a href="https://booking.trustifyedge.com/home?Token=book_a697fe49e-d0cd-40e9-ae17-51357b40597fe49"
-                  class="btn btn--outline" target="_blank" rel="noopener">
+                <a href="#" class="btn btn--outline" onclick="openBookingWidget()">
                   Book Now
                 </a>
               </div>
@@ -1052,7 +1050,84 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <!-- ============================================
+       STICKY BOOKING WIDGET
+       ============================================ -->
+  <!-- Mobile Floating Bar -->
+  <div class="booking-widget-mobile" id="booking-mobile-bar">
+    <div class="booking-widget-mobile__text">
+      <span class="booking-widget-mobile__label">Plan your stay</span>
+      <span class="booking-widget-mobile__sub">Best rates guaranteed</span>
+    </div>
+    <button class="btn btn--primary btn--sm" onclick="openBookingWidget()">
+      Book Now
+    </button>
+  </div>
+
+  <!-- Booking Modal/Overlay -->
+  <div class="booking-modal" id="booking-widget-modal">
+    <div class="booking-modal__content">
+      <button class="booking-modal__close" onclick="closeBookingWidget()" aria-label="Close booking widget">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <div class="booking-modal__header">
+        <h3>Reserve Your Stay</h3>
+        <p>Experience the serenity of Nature Valley</p>
+      </div>
+
+      <form class="booking-form" onsubmit="event.preventDefault(); redirectToBooking();">
+        <div class="booking-form__grid">
+          <div class="booking-form__group">
+            <label for="check-in">Check In</label>
+            <input type="date" id="bm-check-in" required onchange="updateCheckOutMin()">
+          </div>
+
+          <div class="booking-form__group">
+            <label for="check-out">Check Out</label>
+            <input type="date" id="bm-check-out" required>
+          </div>
+
+          <div class="booking-form__group">
+            <label for="guests">Guests & Rooms</label>
+            <div class="booking-form__select-wrapper" onclick="toggleGuestDropdown()">
+              <input type="text" id="bm-guest-display" readonly value="2 Adults, 0 Children - 1 Room"
+                style="cursor: pointer;">
+              <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+
+            <!-- Custom Guest Dropdown -->
+            <!-- Custom Guest Dropdown (3 Columns) -->
+            <div class="guest-dropdown" id="bm-guest-dropdown">
+              <div id="bm-rooms-container" class="rooms-container">
+                <!-- Dynamic Room Rows Injected Here -->
+              </div>
+
+              <button type="button" class="btn btn--outline btn--sm btn--full" onclick="addRoom()" id="bm-add-room-btn"
+                style="margin-bottom: 8px; font-size: 0.8rem; padding: 8px;">
+                + Add Another Room
+              </button>
+
+              <button type="button" class="btn btn--secondary btn--full" onclick="toggleGuestDropdown()">Done</button>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--lg btn--full">
+          Check Availability
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js?v=14"></script>
 </body>
 
 </html>
