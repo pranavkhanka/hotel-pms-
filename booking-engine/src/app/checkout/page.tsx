@@ -250,9 +250,17 @@ function CheckoutContent() {
                         </div>
 
                         <div style={{ marginTop: '2rem', borderTop: '1px solid #eee', paddingTop: '1rem' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1.2rem', fontWeight: 'bold', color: '#2c3e50' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#666', marginBottom: '0.5rem' }}>
+                                <span>Subtotal</span>
+                                <span>₹{(getTotalPrice()).toLocaleString()}</span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.9rem', color: '#666', marginBottom: '0.5rem' }}>
+                                <span>GST (18%)</span>
+                                <span>₹{(getTotalPrice() * 0.18).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '1.2rem', fontWeight: 'bold', color: '#2c3e50', borderTop: '1px dashed #eee', paddingTop: '0.5rem', marginTop: '0.5rem' }}>
                                 <span>Total</span>
-                                <span>₹{(getTotalPrice() * 1.18).toLocaleString()}</span>
+                                <span>₹{(getTotalPrice() * 1.18).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
                             </div>
                             <button onClick={() => setStep(2)} disabled={!isAllRoomsSelected()} style={{ width: '100%', marginTop: '1rem', padding: '12px', background: isAllRoomsSelected() ? '#2c3e50' : '#bdc3c7', color: 'white', border: 'none', borderRadius: '4px', fontWeight: 'bold', cursor: isAllRoomsSelected() ? 'pointer' : 'not-allowed' }}>PROCEED</button>
                         </div>

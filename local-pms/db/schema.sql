@@ -56,6 +56,11 @@ CREATE TABLE IF NOT EXISTS bookings (
     total_amount REAL DEFAULT 0,
     payment_status TEXT DEFAULT 'pending', -- 'pending', 'partial', 'paid'
     source TEXT DEFAULT 'walk_in', -- 'walk_in', 'web', 'ota'
+    num_guests INTEGER DEFAULT 1,
+    num_rooms INTEGER DEFAULT 1,
+    advance_deposit REAL DEFAULT 0,
+    arrival_time TEXT, -- 'HH:MM'
+    checkout_time TEXT, -- 'HH:MM'
     cloud_booking_id TEXT, -- Reference to cloud ID if synced from web
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,

@@ -8,6 +8,7 @@ import Admin from './Admin';
 import CheckIn from './CheckIn';
 import Reservation from './Reservation';
 import Order from './Order';
+import Bookings from './Bookings';
 import { useNavigate } from 'react-router-dom';
 
 import Dashboard from './Dashboard';
@@ -45,7 +46,7 @@ const App = () => {
                 <div className="main-content">
                     <Routes>
                         <Route path="/" element={<Dashboard />} />
-                        <Route path="/bookings" element={<div>Bookings List (TODO)</div>} />
+                        <Route path="/bookings" element={<Bookings />} />
                         <Route path="/admin" element={<Admin />} />
                         <Route path="/order" element={<Order />} />
                         <Route path="/check-in" element={<CheckIn />} />

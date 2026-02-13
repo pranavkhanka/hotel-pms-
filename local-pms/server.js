@@ -42,16 +42,85 @@ app.put('/api/rooms/:id/status', async (req, res) => {
 });
 
 // 2. Bookings
+app.get('/api/bookings', async (req, res) => {
+    try {
+        const bookings = await all(`
+            SELECT b.*, g.name as guest_name, r.room_number 
+            FROM bookings b 
+            LEFT JOIN guests g ON b.guest_id = g.id 
+            LEFT JOIN rooms r ON b.room_id = r.id 
+            WHERE b.deleted = 0
+            ORDER BY b.created_at DESC
+        `);
+        res.json(bookings);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+app.get('/api/bookings/:id', async (req, res) => {
+    try {
+        const booking = await get(`
+            SELECT b.*, g.name as guest_name, g.phone, g.email, r.room_number 
+            FROM bookings b 
+            LEFT JOIN guests g ON b.guest_id = g.id 
+            LEFT JOIN rooms r ON b.room_id = r.id 
+            WHERE b.id = ?
+        `, [req.params.id]);
+        if (!booking) return res.status(404).json({ error: 'Booking not found' });
+        res.json(booking);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 app.post('/api/bookings', async (req, res) => {
-    const { guest_id, room_id, check_in, check_out, total_amount, source } = req.body;
+    const {
+        guest_id, room_id, check_in, check_out, total_amount, source,
+        num_guests, num_rooms, advance_deposit, arrival_time, checkout_time
+    } = req.body;
+
     const id = uuidv4();
     try {
         await run(
-            `INSERT INTO bookings (id, guest_id, room_id, check_in, check_out, total_amount, source, sync_status) 
-             VALUES (?, ?, ?, ?, ?, ?, ?, 'pending')`,
-            [id, guest_id, room_id, check_in, check_out, total_amount, source]
+            `INSERT INTO bookings (
+                id, guest_id, room_id, check_in, check_out, total_amount, source, 
+                num_guests, num_rooms, advance_deposit, arrival_time, checkout_time,
+                sync_status
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')`,
+            [
+                id, guest_id, room_id, check_in, check_out, total_amount, source,
+                num_guests || 1, num_rooms || 1, advance_deposit || 0, arrival_time, checkout_time
+            ]
         );
         res.status(201).json({ id, status: 'confirmed' });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+app.put('/api/bookings/:id', async (req, res) => {
+    const { id } = req.params;
+    const {
+        check_in, check_out, total_amount,
+        num_guests, num_rooms, advance_deposit, arrival_time, checkout_time
+    } = req.body;
+
+    try {
+        await run(
+            `UPDATE bookings SET 
+                check_in = ?, check_out = ?, total_amount = ?,
+                num_guests = ?, num_rooms = ?, advance_deposit = ?, 
+                arrival_time = ?, checkout_time = ?,
+                sync_status = 'pending'
+             WHERE id = ?`,
+            [
+                check_in, check_out, total_amount,
+                num_guests, num_rooms, advance_deposit, arrival_time, checkout_time,
+                id
+            ]
+        );
+        res.json({ status: 'updated', id });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
