@@ -683,46 +683,30 @@
     if (newAdults < 1) return;
     if (newChildren < 0) return;
 
-    // --- Validation Logic as per User Request ---
-    // Rule: "only two people can stay in a single room with the sole exception of 3 people staying when one is a child between 0-12 years of age"
+    // --- New Validation Logic (Updated) ---
+    // Rules:
+    // 1. Max 3 Adults + 1 Child
+    // 2. Max 2 Adults + 2 Children
 
-    // Interpretation:
-    // Max Occupancy = 3.
-    // Max Adults = 2.
-    // If Total = 3, at least 1 MUST be a child.
-
-    const total = newAdults + newChildren;
-
-    if (total > 3) {
-      showNotification("Max 3 guests allowed per room (if one is a child)", "error");
+    if (newAdults > 3) {
+      showNotification("Max 3 adults allowed per room.", "error");
       return;
     }
 
-    if (newAdults > 2) {
-      // Currently hard capped at 2 adults by Max 2 rule implicit in "Only 2 people... exception 3 if one is child"
-      // "3 people... one is child" => 2 Adults + 1 Child.
-      // Does it allow 3 Adults? "only two people... sole exception... when one is a child". No, 3 Adults implies 0 children, so exception doesn't apply.
-      // So Max Adults is strictly 2.
-      showNotification("Max 2 Adults allowed per room.", "error");
+    if (newAdults === 3 && newChildren > 1) {
+      showNotification("With 3 adults, only 1 child is allowed.", "error");
       return;
     }
 
-    if (total === 3 && newChildren === 0) {
-      // Technically "Max 3 guests... if one is a child".
-      // If 3 adults, 0 children -> Invalid. But we already caught newAdults > 2.
-      // So this case (2 adults + 1 adult) is caught by newAdults > 2.
-      // What if (1 adult + 2 others)?
-      // If 1 adult + 2 adults = 3 adults. Caught.
-      // So the "exception" is basically: You can exceed 2 people ONLY IF the 3rd is a child.
-      // Since Adults <= 2 always, the only way to reach 3 is (2 Ad + 1 Ch) or (1 Ad + 2 Ch).
-      // BOTH contain children.
-      // So strictly speaking, `newAdults <= 2` AND `total <= 3` covers it?
-      // Yes.
-      // 2 Adults + 1 Child = 3. OK.
-      // 1 Adult + 2 Children = 3. OK.
-      // 2 Adults + 0 Child = 2. OK.
-      // 3 Adults -> Blocked.
-      // 2 Adults + 2 Children = 4 -> Blocked.
+    if (newAdults <= 2 && newChildren > 2) {
+      showNotification("Max 2 children allowed.", "error");
+      return;
+    }
+
+    if (newAdults + newChildren > 4) {
+      // Catch-all for safety, though covered above (3+2=5 blocked, 2+3=5 blocked)
+      showNotification("Max occupancy exceeded.", "error");
+      return;
     }
 
     // If update passes these checks, commit.
